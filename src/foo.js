@@ -1,7 +1,7 @@
-import * as d3 from 'd3';
+import { range } from 'd3-array';
 
 function foo(n) {
-    return d3.range(n)
+    return range(n)
         .map(function() { return 'bar'; });
 }
 

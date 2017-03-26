@@ -4,7 +4,7 @@
   "description": "JavaScript starter repo (browser + node.js)",
   "main": "build/js-starter.js",
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup index.js --globals d3:d3 --format umd --name jsStarter --output build/js-starter.js",
+    "pretest": "rm -rf build && mkdir build && rollup -c",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
     "build": "npm run test && uglifyjs build/js-starter.js -c -m -o build/js-starter.min.js"
   },
@@ -13,10 +13,12 @@
   "devDependencies": {
     "eslint": "^3.18.0",
     "rollup": "^0.41.6",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^2.0.0",
     "tape": "^4.6.3",
     "uglify-js": "^2.8.15"
   },
   "dependencies": {
-    "d3": "^4.7.3"
+    "d3-array": "^1.1.1"
   }
 }
